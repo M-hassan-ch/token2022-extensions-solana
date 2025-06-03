@@ -16,12 +16,15 @@ export const getCreateMintInstruction = async (connection: Connection, extension
     const mintPubkey = mintKeypair.publicKey;
     const mintLen = getMintLen(extensions)
     const mintLamports = await connection.getMinimumBalanceForRentExemption(mintLen);
-    
-    return SystemProgram.createAccount({
-        fromPubkey: payer.publicKey,
-        newAccountPubkey: mintPubkey,
-        space: mintLen,
-        lamports: mintLamports,
-        programId: TOKEN_2022_PROGRAM_ID,
-    });
+    return {
+        createMintAccountInstruction: SystemProgram.createAccount({
+            fromPubkey: payer.publicKey,
+            newAccountPubkey: mintPubkey,
+            space: mintLen,
+            lamports: mintLamports,
+            programId: TOKEN_2022_PROGRAM_ID,
+        }),
+        mintKeypair,
+        mintPubkey,
+    }
 }

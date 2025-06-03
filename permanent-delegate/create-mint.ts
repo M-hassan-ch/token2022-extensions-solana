@@ -14,18 +14,14 @@ import { getConnection } from '../utils/get-connection';
 import { getCreateMintInstruction } from '../utils/get-create-mint-instruction';
 
 (async () => {
-
     const mintAuthority = PAYER_KEYPAIR.publicKey;
-    const mintKeypair = Keypair.generate();
     const decimals = 9;
-
-    const mintPubkey = mintKeypair.publicKey;
     const extensions = [ExtensionType.PermanentDelegate];
 
     const connection = getConnection('devnet');
 
     // await airdrop(connection, PAYER_KEYPAIR.publicKey, 5);
-    const createMintAccountInstruction = await getCreateMintInstruction(connection, extensions, PAYER_KEYPAIR);
+    const { createMintAccountInstruction, mintPubkey, mintKeypair } = await getCreateMintInstruction(connection, extensions, PAYER_KEYPAIR);
 
     const mintTransaction = new Transaction().add(
         createMintAccountInstruction,
