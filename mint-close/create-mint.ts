@@ -1,12 +1,10 @@
 import {
     sendAndConfirmTransaction,
-    Keypair,
     Transaction,
 } from '@solana/web3.js';
 import {
     ExtensionType,
     createInitializeMintInstruction,
-    createInitializeNonTransferableMintInstruction,
     TOKEN_2022_PROGRAM_ID,
     createInitializeMintCloseAuthorityInstruction,
 } from '@solana/spl-token';
