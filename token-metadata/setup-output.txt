@@ -1,0 +1,4 @@
+Transaction Signature:  3NeAJdNZDFxZgdhakGV4ns1DdwmkmXYy6mRN3abS3N6q335xiF9WQkGKu4gvrUT7Z4LrddMANzBMzUy7cSmB6f5Z
+Mint:  bcsJ2FCRJhaggvuxExH4MnxrzUk3B92aZSnZgR9w5nE
+Metadata:  bcsJ2FCRJhaggvuxExH4MnxrzUk3B92aZSnZgR9w5nE
+Mint Authority:  2TefJ1H9joLqfRJ3zviAvbZf3MziUCNifrMoh6UejT7t
